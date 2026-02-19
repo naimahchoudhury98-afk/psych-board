@@ -3,11 +3,19 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
+  const fetchPosts = () => {
     fetch("http://localhost:3000/posts")
       .then((res) => res.json())
       .then((data) => setPosts(data));
-  }, []);
+  };
+
+  fetchPosts();
+
+  const interval = setInterval(fetchPosts, 5000);
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div>
