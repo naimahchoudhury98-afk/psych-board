@@ -27,6 +27,19 @@ app.get("/posts", async (req, res) => {
   }
 });
 
+app.post("/posts", async (req, res) => {
+  try {
+    const { title, content, author } = req.body;
+    const result = (await db.query(
+      "INSERT INTO posts (title, content, author) VALUES ($1, $2, $3) RETURNING *",
+      [title, content, author]
+    )).rows;
+    res.status(201).json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.listen(3000, ()=> {
     console.log("Server runing on http://localhost:3000")
 })
