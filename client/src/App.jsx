@@ -4,6 +4,7 @@ import Feed from "./pages/Feed";
 import NewPost from "./pages/NewPost";
 import SinglePost from "./pages/SinglePost";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -15,6 +16,8 @@ export default function App() {
         <Route path="/new-post" element={<NewPost />} />
         <Route path="/posts/:id" element={<SinglePost />} />
       </Routes>
+      <Footer />
+
     </div>
   );
 }
