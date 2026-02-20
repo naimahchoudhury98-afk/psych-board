@@ -1,16 +1,28 @@
-# React + Vite
+# MindFeed 🧠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A psychology discussion board where users can share and explore posts about psychology, dreams and the mind.
 
-Currently, two official plugins are available:
+## Reflection
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### What requirements did I achieve?
+- Created a React client with multiple pages using React Router
+- Built an Express server with GET, POST and DELETE endpoints
+- Created a form for users to add new posts
+- Designed a PostgreSQL database schema and seeded it with realistic data
+- Used SQL to retrieve posts from the database
+- Displayed all posts using .map()
+- Used setInterval and useEffect to poll the database every 5 seconds
 
-## React Compiler
+### Stretch goals achieved
+- Dynamic single post pages using /posts/:id
+- Delete functionality on posts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Were there any goals I was unable to achieve?
+- Like functionality and category filtering were not implemented
 
-## Expanding the ESLint configuration
+### What went well?
+- Setting up the Express server and connecting it to Supabase
+- Building the Twitter/X style feed UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### What could have gone better?
+- Could have added more stretch goals like likes and filtering .
