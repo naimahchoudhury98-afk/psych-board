@@ -40,6 +40,15 @@ app.post("/posts", async (req, res) => {
   }
 });
 
+app.get("/posts/:id", async (req, res) => {
+  try {
+    const post = (await db.query("SELECT * FROM posts WHERE id = $1", [req.params.id])).rows;
+    res.json(post);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.listen(3000, ()=> {
     console.log("Server runing on http://localhost:3000")
 })
