@@ -49,6 +49,15 @@ app.get("/posts/:id", async (req, res) => {
   }
 });
 
+app.delete("/posts/:id", async (req, res) => {
+  try {
+    await db.query("DELETE FROM posts WHERE id = $1", [req.params.id]);
+    res.status(204).send();
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.listen(3000, ()=> {
     console.log("Server runing on http://localhost:3000")
 })
