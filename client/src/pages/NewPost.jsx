@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function NewPost() {
+    const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     content: "",
@@ -18,6 +20,7 @@ export default function NewPost() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(formData),
   });
+  navigate("/");
 }
 
  return (
