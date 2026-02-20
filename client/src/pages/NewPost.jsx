@@ -20,31 +20,35 @@ export default function NewPost() {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">New Post 🧠</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          className="border rounded-xl p-3 outline-none focus:border-purple-400"
-          name="title"
-          placeholder="Title"
-          onChange={handleChange}
-        />
-        <input
-          className="border rounded-xl p-3 outline-none focus:border-purple-400"
-          name="author"
-          placeholder="Your name"
-          onChange={handleChange}
-        />
-        <textarea
-          className="border rounded-xl p-3 outline-none focus:border-purple-400 h-32"
-          name="content"
-          placeholder="What's on your mind?"
-          onChange={handleChange}
-        />
-        <button className="bg-purple-500 text-white py-3 rounded-full font-semibold">
-          Post
-        </button>
-      </form>
+    <div className="min-h-screen bg-linear-to-br from-purple-50 to-indigo-100 p-6">
+      <div className="max-w-xl mx-auto">
+        <h1 className="text-2xl font-bold mb-6 text-purple-700">New Post 🧠</h1>
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input
+              className="border border-gray-200 rounded-xl p-3 outline-none focus:border-purple-400 transition-all duration-200"
+              name="title"
+              placeholder="Title"
+              onChange={handleChange}
+            />
+            <input
+              className="border border-gray-200 rounded-xl p-3 outline-none focus:border-purple-400 transition-all duration-200"
+              name="author"
+              placeholder="Your name"
+              onChange={handleChange}
+            />
+            <textarea
+              className="border border-gray-200 rounded-xl p-3 outline-none focus:border-purple-400 transition-all duration-200 h-32"
+              name="content"
+              placeholder="What's on your mind?"
+              onChange={handleChange}
+            />
+            <button className="bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 rounded-full font-semibold hover:opacity-90 transition-all duration-200">
+              Post 🧠
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
